@@ -1,3 +1,7 @@
+// constructor method sets the initial value of snake's x and y coordinate, sets the speed of the snake in the xSpeed and ySpeed
+// draw function creates the initial snake head 
+// changeDirection function changes the direction of the snake depending on what key the user selects
+// update function makes sure that the snake comes back if it hits the end of the canvas
 function Snake(){
    this.x = 0;
    this.y = 0;
