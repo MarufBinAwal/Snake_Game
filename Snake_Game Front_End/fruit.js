@@ -1,3 +1,4 @@
+// pickLocation generates fruit and randomnly puts in a location
 function Fruit(){
     this.x;
     this.y;

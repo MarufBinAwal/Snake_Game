@@ -1,6 +1,10 @@
+// grab the canvas in html, grab the context inside, set scale to 30 pixel then create rows and columns inside of canvas
+// setup function creates instances of snake, fruit and the location that the fruit is generated
+// eventlistener was added here to listen for arrow keys being clicked 
+// snake.eat will run when snake eats fruit and make it larger
 const canvas = document.querySelector('.canvas');
 const ctx = canvas.getContext('2d');
-const scale = 10;
+const scale = 30;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 
