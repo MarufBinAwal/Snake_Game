@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_162037) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "s"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

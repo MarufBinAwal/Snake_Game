@@ -14,9 +14,9 @@ User.create(name: 'James')
 User.create(name: 'Tk')
 
 
-Score.create(user_id: '1')
-Score.create(user_id: '2')
-Score.create(user_id: '3')
+Score.create(user_id: '1', s: 34)
+Score.create(user_id: '2', s: 235)
+Score.create(user_id: '3', s: 1234)
 
 
 

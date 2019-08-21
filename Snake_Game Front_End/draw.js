@@ -2,6 +2,7 @@
 // setup function creates instances of snake, fruit and the location that the fruit is generated
 // eventlistener was added here to listen for arrow keys being clicked 
 // snake.eat will run when snake eats fruit and make it larger
+
 const canvas = document.querySelector('.canvas');
 const ctx = canvas.getContext('2d');
 const scale = 30;
@@ -32,3 +33,58 @@ window.addEventListener('keydown', ((e)=> {
     const direction = e.key.replace("Arrow", '')
     snake.changeDirection(direction);
 }));
+
+fetch('http://localhost:3000/api/v1/users')
+.then(res=>res.json())
+.then(users=>{
+    console.log(users)
+    users.forEach(user=>{
+    //   console.log(user.name)
+      getUsers(user)
+      user.scores.forEach(score=> {
+       console.log(score.s)
+       getScores(score)
+      })
+    //   console.log(user.name)
+    })
+
+})
+getScores= score =>{
+    let body= document.querySelector('body')
+    let div= document.createElement('div')
+    let ul= document.createElement('ul')
+    let li= document.createElement('li')
+    li.className="myLi"
+    li.innerText= score.s
+    li.style.color= "purple"
+    li.style.textAlign="center"
+    ul.className="myUl"
+    ul.append(li)
+    div.className="myDiv"
+    div.append(ul)
+    body.append(div)
+    body.style.height="100px"
+    // ul.style.width="30px"
+    }  
+
+getUsers= user =>{
+let body= document.querySelector('body')
+let div= document.createElement('div')
+let ul= document.createElement('ul')
+let li= document.createElement('li')
+li.className="myLi"
+li.innerText= user.name
+li.style.color= "purple"
+li.style.textAlign="center"
+ul.className="myUl"
+ul.append(li)
+div.className="myDiv"
+div.append(ul)
+body.append(div)
+body.style.height="100px"
+// ul.style.width="30px"
+}
+
+
+let form = document.querySelector('.form-inline mt-2 mt-md-0')
+let input = document.querySelector('.form-control mr-sm-2')
